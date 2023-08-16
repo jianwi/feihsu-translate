@@ -18,3 +18,8 @@
   height: 38px;
   border-radius: 50%;
 }
+
+body {
+    font-family: "PingFang SC";
+    font-size: 14px;
+}
