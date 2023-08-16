@@ -1,0 +1,9 @@
+{
+  "toolTitle": "中英互译工具",
+  "selectCellTip": "请选择一个包含中文或者英文的单元格",
+  "originalText": "原文",
+  "translatedText": "译文",
+  "replaceButton": "一键替换",
+  "load_error.1":"运行项目后，请获取 webview 地址，粘贴至多维表格「扩展脚本」中使用。详见：",
+  "load.guide":"开发指南"
+}

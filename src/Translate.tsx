@@ -2,18 +2,19 @@ import { useState} from "react";
 import {bitable} from "@base-open/web-api";
 import {Button, message} from "antd";
 import axios from "axios";
-import Setting from "./Setting";
-
+// import Setting from "./Setting";
+import { useTranslation } from "react-i18next";
 
 
 export default function Translate() {
+    const { t } = useTranslation();
     const [originText, setOriginText] = useState("")
     const [translatedText, setTranslatedText] = useState("")
-    const [tipText, setTipText] = useState("请选择一个包含中文或者英文的单元格")
+    const [tipText, setTipText] = useState(t("selectCellTip"))
     const [tableInfo, setTableInfo] = useState<any>({})
 
     function showTip() {
-        setTipText("请选择一个包含中文或者英文的单元格")
+        setTipText(t('selectCellTip'))
         setOriginText("")
         setTranslatedText("")
     }
@@ -61,7 +62,7 @@ export default function Translate() {
                     getTranslate(text)
                 }
             }catch (e) {
-                message.error("百度翻译api配置错误，请检查")
+                message.error(JSON.stringify(e))
             }
         } else {
            showTip()
@@ -132,18 +133,18 @@ export default function Translate() {
     return (
         <>
             <div style={{display: "flex", alignItems: "center", marginBottom: "50px", justifyContent: "center"}}>
-                中英互译工具
+                {t("toolTitle")}
             </div>
-            {/* <Setting /> */}
+            {/*<Setting />*/}
             {tipText ? <div style={{marginTop: '15px'}}>{tipText}</div> : ''}
             {
-                originText ? <div style={{marginTop: '15px'}}>原文：{originText}</div> : ''
+                originText ? <div style={{marginTop: '15px'}}>{t("originalText")}：{originText}</div> : ''
             }
             {
                 translatedText ? (
                     <>
-                        <div style={{marginTop: '15px'}}>译文：{translatedText}</div>
-                        <Button style={{marginTop: "10px"}} type="primary" onClick={replaceText}>一键替换</Button>
+                        <div style={{marginTop: '15px'}}> {t("translatedText")}: {translatedText}</div>
+                        <Button style={{marginTop: "10px"}} type="primary" onClick={replaceText}>{t("replaceButton")}</Button>
                     </>
                 ) : ''
             }
