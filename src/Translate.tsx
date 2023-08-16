@@ -112,7 +112,7 @@ export default function Translate() {
             appid: appId,
             secret: secret
         }
-        if (/(\w{3}|^\w+$)/.test(text)) {
+        if (/([\w\s]{10}|^\w+$)/.test(text)) {
             reqData.from = "en"
             reqData.to = "zh"
         }
