@@ -91,7 +91,7 @@ export default function Translate() {
             reqData.from = "en"
             reqData.to = "zh"
         }
-        let r = await axios.post("https://iwill.vip/t2.php", reqData, {
+        let r = await axios.post("https://base-translator-api.replit.app/cell_translate", reqData, {
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             }
@@ -134,7 +134,7 @@ export default function Translate() {
             <div style={{display: "flex", alignItems: "center", marginBottom: "50px", justifyContent: "center"}}>
                 中英互译工具
             </div>
-            <Setting />
+            {/* <Setting /> */}
             {tipText ? <div style={{marginTop: '15px'}}>{tipText}</div> : ''}
             {
                 originText ? <div style={{marginTop: '15px'}}>原文：{originText}</div> : ''
