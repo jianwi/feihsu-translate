@@ -3,6 +3,7 @@ import {bitable} from "@base-open/web-api";
 import {Button, message} from "antd";
 import axios from "axios";
 // import Setting from "./Setting";
+import LanguageSelect from "./LanguageSelect.tsx";
 import { useTranslation } from "react-i18next";
 
 
@@ -135,7 +136,7 @@ export default function Translate() {
             <div style={{display: "flex", alignItems: "center", marginBottom: "50px", justifyContent: "center"}}>
                 {t("toolTitle")}
             </div>
-            {/*<Setting />*/}
+            <LanguageSelect/>
             {tipText ? <div style={{marginTop: '15px'}}>{tipText}</div> : ''}
             {
                 originText ? <div style={{marginTop: '15px'}}>{t("originalText")}：{originText}</div> : ''
