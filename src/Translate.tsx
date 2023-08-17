@@ -91,8 +91,8 @@ export default function Translate() {
     function getReqData(text: string) {
         let reqData = {
             q: text,
-            from: "zh",
-            to: "en"
+            from: "en",
+            to: "zh"
         }
         let configJSON = localStorage.getItem("translateConfig")
         if (configJSON) {
@@ -107,9 +107,9 @@ export default function Translate() {
                 return reqData
             }
         }
-        if (/(\w{3}|^\w+$)/.test(text)) {
-            reqData.from = "en"
-            reqData.to = "zh"
+        if (/\p{Script=Han}/u.test(text)) {
+            reqData.from = "zh"
+            reqData.to = "en"
         }
         return reqData
     }
