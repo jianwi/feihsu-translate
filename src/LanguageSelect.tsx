@@ -22,7 +22,7 @@ const supportedLanguage = [
     { code: "tl", key: "lang.tl" },
 ];
 
-export default function LanguageSelect() {
+export default function LanguageSelect({translateFn}: {translateFn: any}) {
     const { t } = useTranslation();
     const [mode, setMode] = useState("auto")
     const [fromLanguage, setFromLanguage] = useState("en")
@@ -78,6 +78,7 @@ export default function LanguageSelect() {
         setToLanguage(value)
         translateConfig.to = value
         localStorage.setItem("translateConfig", JSON.stringify(translateConfig))
+        translateFn()
     }
 
     const [currentDirection, setCurrentDirection] = useState(1)
@@ -92,7 +93,7 @@ export default function LanguageSelect() {
         let translateConfig = JSON.parse(translateConfigJSON)
         translateConfig.direction = targetDirection
         localStorage.setItem("translateConfig", JSON.stringify(translateConfig))
-
+        translateFn()
     }
 
 
