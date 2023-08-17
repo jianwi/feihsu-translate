@@ -97,8 +97,8 @@ export default function LanguageSelect() {
 
 
     return <>
-        <Radio.Group onChange={handleChangeMode} value={mode} buttonStyle="solid" style={{textAlign:'left'}}>
-            <Space direction="vertical">
+        <Radio.Group size="small" onChange={handleChangeMode} value={mode} buttonStyle="solid" style={{textAlign:'left'}}>
+            <Space size="small" direction="vertical">
                 <Radio value="auto">
                     {t("select.mode.auto")}
                 </Radio>
@@ -111,6 +111,7 @@ export default function LanguageSelect() {
             mode === "custom"?
             <div style={{marginTop: "10px"}}>
                 <Select
+                    size="small"
                     onChange={handleChangeFrom}
                     style={{ width: 100 }}
                     options={supportedLanguage.map((item) => ({
@@ -119,8 +120,11 @@ export default function LanguageSelect() {
                     }))}
                     defaultValue={fromLanguage}
                 />
-                <Button type="link" onClick={handleSwitch} style={{margin: "0 10px"}}>{ currentDirection == 1?'\u2192':'\u2190' }</Button>
+                <Button
+                    size="small"
+                    type="link" onClick={handleSwitch} style={{margin: "0 10px"}}>{ currentDirection == 1?'\u2192':'\u2190' }</Button>
                 <Select
+                    size="small"
                     onChange={handleChangeTo}
                     style={{ width: 100 }}
                     options={supportedLanguage.map((item) => ({

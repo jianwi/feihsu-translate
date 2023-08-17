@@ -3,7 +3,7 @@
   "selectCellTip": "Please select the cell to be translated",
   "originalText": "Plain Text",
   "translatedText": "Translated",
-  "replaceButton": "Replace It",
+  "replaceButton": "Replace Cell Content",
   "select.mode.auto": "Automate (Chinese/English)",
   "select.mode.custom": "Custom",
   "load_error.1":"After running the project, please get the webview address and paste it into the multidimensional table \"Extended Script\" for use. See: ",
