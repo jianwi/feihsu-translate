@@ -1,6 +1,6 @@
 {
   "toolTitle": "即时翻译-哪里不会点哪里",
-  "selectCellTip": "请选择一个包含中文或者英文的单元格",
+  "selectCellTip": "请选择需要翻译的单元格",
   "originalText": "原文",
   "translatedText": "译文",
   "replaceButton": "替换原文",

@@ -129,14 +129,11 @@ export default function Translate() {
 
     return (
         <>
-            <div style={{display: "flex", alignItems: "center", marginBottom: "10px", justifyContent: "center"}}>
-                {t("toolTitle")}
-            </div>
             <LanguageSelect translateFn={()=>{
                 getTranslate(originText)
             }} />
             {tipText ?
-                <div style={{marginTop: '15px'}}>{tipText}</div> :
+                <div style={{marginTop: '65px',fontSize:"16px",fontWeight:500}}>{tipText}</div> :
                 <TranslateResult replaceText={replaceText} originText={originText} translatedText={translatedText}/>
             }
         </>

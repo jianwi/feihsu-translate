@@ -56,6 +56,8 @@ export default function LanguageSelect({translateFn}: {translateFn: any}) {
         setMode(e.target.value)
         translateConfig.mode = e.target.value
         localStorage.setItem("translateConfig", JSON.stringify(translateConfig))
+
+        translateFn()
     }
     
     function handleChangeFrom(value: string) {
